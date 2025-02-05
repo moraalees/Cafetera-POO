@@ -3,7 +3,7 @@ package src
 class Cafetera(val ubicacion: String) {
 
     var capacidad = 1000
-    private var cantidad = 0
+    var cantidad = 0
 
     constructor(ubicacion: String, capacidad: Int): this(ubicacion) {
         this.capacidad = capacidad
@@ -42,8 +42,6 @@ class Cafetera(val ubicacion: String) {
         val cantidadQueFalta = taza.capacidad - taza.cantidad
         if (cantidad == 0){
             println("La cafetera está vacía, no se puede llenar la taza.")
-        } else if (taza.cantidad == taza.capacidad){
-            println("La taza ya está llena, no hay que llenar nada.")
         } else {
             if (cantidad < cantidadQueFalta){
                 taza.llenar(cantidad)
@@ -63,7 +61,7 @@ class Cafetera(val ubicacion: String) {
             println("Cafetera llenada al 100% '$capacidad c.c.' (la cantidad superaba la capacidad).")
         } else {
             cantidad = cantidadFinal
-            println("Cafetera llena a $cantidadFinal c.c.")
+            println("Cafetera llenada a $cantidadFinal c.c.")
         }
     }
 

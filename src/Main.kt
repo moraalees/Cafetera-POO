@@ -1,5 +1,17 @@
 package src
 
+fun llenarTazas(cafetera1: Cafetera, cafetera2: Cafetera, cafetera3: Cafetera, taza: Taza){
+    if (cafetera1.cantidad != 0){
+        cafetera1.servirTaza(taza)
+    }
+    if (cafetera2.cantidad != 0){
+        cafetera2.servirTaza(taza)
+    }
+    if (cafetera3.cantidad != 0){
+        cafetera3.servirTaza(taza)
+    }
+}
+
 fun main(){
     val cafetera1 = Cafetera("Sala")
     val cafetera2 = Cafetera("Cocina", 750)
@@ -33,4 +45,17 @@ fun main(){
     println(cafetera1)
     println(cafetera2)
     println(cafetera3)
+
+    println("**********************************************")
+    for (taza in listaTazas){
+        llenarTazas(cafetera1, cafetera2, cafetera3, taza)
+    }
+
+    println(cafetera1)
+    println(cafetera2)
+    println(cafetera3)
+
+    for (taza in listaTazas){
+        println(taza)
+    }
 }
