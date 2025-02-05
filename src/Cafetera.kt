@@ -2,16 +2,21 @@ package src
 
 class Cafetera(val ubicacion: String) {
 
-    private val capacidad = 1000
+    private var capacidad = 1000
     private var cantidad = 0
 
     constructor(ubicacion: String, capacidad: Int): this(ubicacion) {
+        this.capacidad = capacidad
         cantidad = capacidad
     }
 
     constructor(ubicacion: String, capacidad: Int, cantidad: Int): this(ubicacion) {
+        this.capacidad = capacidad
+
         if (cantidad > capacidad) {
             this.cantidad = capacidad
+        } else {
+            this.cantidad = cantidad
         }
     }
 
