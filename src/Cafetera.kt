@@ -29,7 +29,20 @@ class Cafetera(val ubicacion: String) {
     }
 
     fun servirTaza(taza: Taza){
-
+        val cantidadQueFalta = taza.capacidad - taza.cantidad
+        if (cantidad == 0){
+            println("La cafetera está vacía, no se puede llenar la taza.")
+        } else if (taza.cantidad == taza.capacidad){
+            println("La taza ya está llena, no hay que llenar nada.")
+        } else {
+            if (cantidad < cantidadQueFalta){
+                taza.llenar(cantidad)
+                cantidad = 0
+            } else {
+                taza.llenar(cantidad)
+                cantidad -= cantidadQueFalta
+            }
+        }
     }
 
     fun agregarCafe(cantidadAgregada: Int){

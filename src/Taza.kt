@@ -1,6 +1,6 @@
 package src
 
-class Taza(private val color: Color = Color.Blanco, private var capacidad: Int = 50) {
+class Taza(private val color: Color = Color.Blanco, var capacidad: Int = 50) {
 
     var cantidad = 0
         set(value){
