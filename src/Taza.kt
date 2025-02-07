@@ -1,6 +1,14 @@
 package src
 
 class Taza(private val color: Color = Color.Blanco, var capacidad: Int = 50) {
+    companion object{
+
+        fun nuevaTazaAleatoria(): Taza{
+            val taza = Taza(color = Color.values().random(), capacidad = listOf(50, 75, 100).random())
+            return taza
+        }
+
+    }
 
     var cantidad = 0
         set(value){
