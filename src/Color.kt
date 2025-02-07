@@ -6,4 +6,10 @@ enum class Color {
     Gris,
     Azul,
     Verde;
+
+    companion object{
+        fun generarColorAleatorio(): Color{
+            return entries.toTypedArray().random()
+        }
+    }
 }
